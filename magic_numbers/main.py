@@ -68,7 +68,7 @@ def exponentiation(expr: str) -> int:
 
 def main():
     data = Path("input.txt").read_text(encoding="utf-8").splitlines()
-    #print(data, end="")
+
     for line in data:
         if not line.strip():
             continue

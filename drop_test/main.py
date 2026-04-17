@@ -15,6 +15,7 @@ def min_num_of_drops(N, H):
         total = 0
         for i in range(1, N + 1):
             total += comb(m, i)
+            
             if total >= H:
                 break
 
