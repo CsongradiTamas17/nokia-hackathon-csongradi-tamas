@@ -39,6 +39,7 @@ def parse_ipconfig(file_path):
 
             current[key] = val
             last_key = key
+
         elif last_key:
             extra = parse_value(last_key, line)
             cur = current.get(last_key)
