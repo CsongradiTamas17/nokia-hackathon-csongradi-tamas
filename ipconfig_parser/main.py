@@ -35,6 +35,7 @@ def parse_ipconfig(file_path):
         if ":" in line:
             k, v = line.split(":", 1)
             key = clean(k)
+            key = key.replace(" ", "_")
             val = parse_value(key, v)
 
             current[key] = val
@@ -57,7 +58,7 @@ def parse_ipconfig(file_path):
 def main():
     for path in sorted(Path(".").glob("*.txt")):
         output = {
-            "file_name": "ipconfig.log", # path.name
+            "file_name": path.name, # "ipconfig.log"
             "adapters": parse_ipconfig(path)
         }
 
