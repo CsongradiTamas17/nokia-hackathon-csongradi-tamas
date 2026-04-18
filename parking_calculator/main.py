@@ -53,8 +53,13 @@ def main():
 
             minutes = int((exit - entry).total_seconds() // 60)
             fee = calculate_fee(minutes)
+            hours = minutes // 60
+            mins = minutes % 60
 
-            print(f"{plate} ({minutes} perc parkolás) → {fee} forint")
+            if minutes < 60:
+                print(f"{plate} ({minutes} perc parkolás) → {fee} forint")
+            else:
+                print(f"{plate} ({hours} óra parkolás) → {fee} forint")
 
         except Exception:
             print("HIBA a sor feldolgozásánál")
