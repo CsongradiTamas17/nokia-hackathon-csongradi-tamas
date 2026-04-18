@@ -3,7 +3,6 @@ from datetime import datetime
 import math
 import re
 
-
 def parse_time(s: str):
     return datetime.strptime(s.strip(), "%Y-%m-%d %H:%M:%S")
 
@@ -50,7 +49,6 @@ def main():
 
             # Ha a kilépés kisebb mint a belépés
             if exit < entry:
-                #print(f"{plate} → HIBA (kilépés korábbi)")
                 continue
 
             minutes = int((exit - entry).total_seconds() // 60)
