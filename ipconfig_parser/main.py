@@ -72,7 +72,7 @@ def main():
             "adapters": parse_ipconfig(path)
         }
 
-        out_file = f"output_{path.stem}.json"
+        out_file = f"{path.stem}.json"
         Path(out_file).write_text(
             json.dumps(output, ensure_ascii=False, indent=2),
             encoding="utf-8"
