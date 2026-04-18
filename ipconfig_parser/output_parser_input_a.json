@@ -9,7 +9,11 @@
       "link-local ipv6 address": "fe80::9c21:ef74:66af:120d%3",
       "ipv4 address": "192.168.0.10",
       "subnet mask": "",
-      "default gateway": ["fe80::ab52:9c21:fabe:3e44%3", "192.168.0.1", "127.0.0.1"]
+      "default gateway": [
+        "fe80::ab52:9c21:fabe:3e44%3",
+        "192.168.0.1",
+        "127.0.0.1"
+      ]
     },
     {
       "adapter_name": "Ethernet adapter Ethernet 3",
@@ -19,7 +23,10 @@
       "link-local ipv6 address": "fe80::9c21:ef74:66af:120d%3",
       "ipv4 address": "192.168.0.10(Deferred)",
       "subnet mask": "255.255.255.0",
-      "default gateway": ["fe80::ab52:9c21:fabe:3e44%3", "192.168.0.1"]
+      "default gateway": [
+        "fe80::ab52:9c21:fabe:3e44%3",
+        "192.168.0.1"
+      ]
     },
     {
       "adapter_name": "Ethernet adapter Ethernet 5",
@@ -32,17 +39,17 @@
     {
       "adapter_name": "Wireless LAN adapter Local Area Connection* 1",
       "media state": "Media disconnected",
-      "connection-specific dns suffix": ""
+      "connection-specific dns suffix": " "
     },
     {
       "adapter_name": "Wireless LAN adapter Local Area Connection* 2",
       "media state": "Media disconnected",
-      "connection-specific dns suffix": ""
+      "connection-specific dns suffix": " "
     },
     {
       "adapter_name": "Wireless LAN adapter Wi-Fi",
       "media state": "Media disconnected",
-      "connection-specific dns suffix": ""
+      "connection-specific dns suffix": " "
     },
     {
       "adapter_name": "Ethernet adapter Bluetooth Network Connection",

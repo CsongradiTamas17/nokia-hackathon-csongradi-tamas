@@ -11,12 +11,9 @@ def calculate_fee(minutes):
     FREE_MINUTES = 30
     CHEAP_LIMIT_MINUTES = 3 * 60  # 3 óra
     CHEAP = 300
-    #CHEAP_RATE = 300
     EXPENSIVE_RATE = 500
     DAY = 24 * 60
     DAILY_CAP = 10000
-    #DAY_MINUTES = 24 * 60
-
 
     days = minutes // DAY
     rem = minutes % DAY

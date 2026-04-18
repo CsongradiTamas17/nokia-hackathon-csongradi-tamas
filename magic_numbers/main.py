@@ -1,6 +1,5 @@
 from pathlib import Path
 
-# Palindrom-szerű szám keresése
 def next_magic_num(n: str) -> str:
     length = len(n)
     num = list(n)

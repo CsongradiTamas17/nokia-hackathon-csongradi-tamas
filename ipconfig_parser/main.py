@@ -3,10 +3,7 @@ import json
 import re
 
 # csak ezeknél engedünk több értéket
-MULTI_VALUE_KEYS = {
-    "dns servers",
-    "default gateway",
-}
+MULTI_VALUE_KEYS = { "dns servers", "default gateway", }
 
 def read_file_safely(file_path):
     for enc in ["utf-8", "utf-16", "cp1250"]:
@@ -18,41 +15,28 @@ def read_file_safely(file_path):
     raise ValueError(f"Nem olvasható fájl: {file_path}")
 
 
-def clean_key(key: str) -> str:
-    key = key.lower()
-    key = re.sub(r"\.+", "", key)
-    return key.strip()
+def clean(key):
+    return re.sub(r"\.+", "", key.lower()).strip()
 
 # Adatok kezelése
-def parse_value(key: str, value: str):
+def parse_value(key, value):
     value = value.strip()
-
-    if key in MULTI_VALUE_KEYS:
-        return [v for v in value.split() if v]
-
-    # minden más marad egyben (pl. dátumok)
-    return value
+    return value.split() if key in MULTI_VALUE_KEYS else value
 
 
 def parse_ipconfig(file_path):
-    lines = read_file_safely(file_path)
-
     adapters = []
     current = None
     last_key = None
 
-    for line in lines:
-        line = line.rstrip()
+    for line in read_file_safely(file_path):
+        line = line.strip()
+        low = line.lower()
 
-        # Új adapter
-        if line.lower().startswith("ethernet adapter") or line.lower().startswith("wireless lan adapter"):
+        if "adapter" in low:
             if current:
                 adapters.append(current)
-
-            current = {
-                "adapter_name": line.replace(":", "").strip(),
-            }
-
+            current = {"adapter_name": line.replace(":", "")}
             last_key = None
             continue
 
@@ -60,32 +44,20 @@ def parse_ipconfig(file_path):
             continue
 
         if ":" in line:
-            key_part, value_part = line.split(":", 1)
+            k, v = line.split(":", 1)
+            key = clean(k)
+            val = parse_value(key, v)
 
-            key = clean_key(key_part)
-            value = value_part.strip()
-
+            current[key] = val
             last_key = key
+        elif last_key:
+            extra = parse_value(last_key, line)
+            cur = current.get(last_key)
 
-            parsed = parse_value(key, value)
-
-            current[key] = parsed
-
-        else:
-            extra = line.strip()
-            if not extra or not last_key:
-                continue
-
-            parsed = parse_value(last_key, extra)
-
-            existing = current.get(last_key)
-
-            if isinstance(existing, list):
-                current[last_key].extend(parsed if isinstance(parsed, list) else [parsed])
-            elif isinstance(existing, str):
-                current[last_key] = existing + " " + parsed if isinstance(parsed, str) else existing
+            if isinstance(cur, list):
+                cur.extend(extra if isinstance(extra, list) else [extra])
             else:
-                current[last_key] = parsed
+                current[last_key] = f"{cur} {extra}" if isinstance(extra, str) else extra
 
     if current:
         adapters.append(current)
@@ -95,35 +67,18 @@ def parse_ipconfig(file_path):
 
 def main():
     for path in sorted(Path(".").glob("*.txt")):
-        adapters = parse_ipconfig(path)
-
         output = {
             "file_name": path.name,
-            "adapters": adapters
+            "adapters": parse_ipconfig(path)
         }
 
-        # Json fájlba írás (ami MULTI_VALUE_KEYS, az egy sorba íródjon)
-        json_text = json.dumps(output, indent=2, ensure_ascii=False)
+        out_file = f"output_{path.stem}.json"
+        Path(out_file).write_text(
+            json.dumps(output, ensure_ascii=False, indent=2),
+            encoding="utf-8"
+        )
 
-        for key in MULTI_VALUE_KEYS:
-            pattern = rf'("{re.escape(key)}": )\[\n(.*?)\n\s*\]'
-
-            json_text = re.sub(
-                pattern,
-                lambda m: m.group(1) + "[" +
-                          ", ".join(f'"{x}"' for x in re.findall(r'"(.*?)"', m.group(2))) +
-                          "]",
-                json_text,
-                flags=re.DOTALL
-            )
-
-        output_name = "output_" + path.stem + ".json"
-
-        with open(output_name, "w", encoding="utf-8") as f:
-            f.write(json_text)
-
-        print(output_name)
-
+        print(out_file)
 
 if __name__ == "__main__":
     main()
