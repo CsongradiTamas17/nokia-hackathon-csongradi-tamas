@@ -1,0 +1,87 @@
+{
+  "file_name": "parser_input_b.txt",
+  "adapters": [
+    {
+      "adapter_name": "Ethernet adapter Ethernet 2",
+      "media state": "Media disconnected",
+      "connection-specific dns suffix": "",
+      "description": "Intel(R) Ethernet Connection (16) I219-LM",
+      "physical address": "E1-17-17-17-17-E1",
+      "dhcp enabled": "Yes",
+      "autoconfiguration enabled": "Yes"
+    },
+    {
+      "adapter_name": "Ethernet adapter Ethernet 3",
+      "connection-specific dns suffix": "",
+      "description": "USB Ethernet",
+      "physical address": "E1-17-17-17-17-E1",
+      "dhcp enabled": "Yes",
+      "autoconfiguration enabled": "Yes",
+      "ipv6 address": "fd58:43b2:11a9:0000:0000:0000:0000:0001(Preferred)",
+      "temporary ipv6 address": "fd58:43b2:11a9:0000:0000:0000:0000:0010(Preferred)",
+      "link-local ipv6 address": "fe80::9c21:ef74:66af:120d%3(Preferred)",
+      "ipv4 address": "192.168.0.10(Preferred)",
+      "subnet mask": "255.255.255.0",
+      "lease obtained": "2026. március 31., kedd 10:40:50",
+      "lease expires": "2026. április 7., kedd 10:40:50",
+      "default gateway": ["fe80::ab52:9c21:fabe:3e44%3", "192.168.0.1"],
+      "dhcp server": "192.168.0.1",
+      "dhcpv6 iaid": "123456789",
+      "dhcpv6 client duid": "00-01-03-05-07-09-0B-0E-10-18-1F-35-73-A6",
+      "dns servers": ["192.168.0.1"],
+      "fd58": "43b2:11a9:0000:0000:0000:0000:0002",
+      "netbios over tcpip": "Enabled"
+    },
+    {
+      "adapter_name": "Ethernet adapter Ethernet 5",
+      "connection-specific dns suffix": "",
+      "description": "Realtek USB GbE Family Controller",
+      "physical address": "71-C7-C7-C7-C7-71",
+      "dhcp enabled": "Yes",
+      "autoconfiguration enabled": "Yes",
+      "link-local ipv6 address": "fe80::ef74:6a6d:9c21:c312%15(Preferred)",
+      "autoconfiguration ipv4 address": "192.168.10.1(Preferred)",
+      "subnet mask": "255.255.0.0",
+      "default gateway": [],
+      "dhcpv6 iaid": "657726242",
+      "dhcpv6 client duid": "00-01-00-01-2C-0F-2C-0F-E8-80-E8-80-83-83",
+      "netbios over tcpip": "Enabled"
+    },
+    {
+      "adapter_name": "Wireless LAN adapter Local Area Connection* 1",
+      "media state": "Media disconnected",
+      "connection-specific dns suffix": "",
+      "description": "Microsoft Wi-Fi Direct Virtual Adapter",
+      "physical address": "4F:4F:89:89:EE:EE",
+      "dhcp enabled": "Yes",
+      "autoconfiguration enabled": "Yes"
+    },
+    {
+      "adapter_name": "Wireless LAN adapter Local Area Connection* 2",
+      "media state": "Media disconnected",
+      "connection-specific dns suffix": "",
+      "description": "Microsoft Wi-Fi Direct Virtual Adapter #2",
+      "physical address": "d4-d4-11-11-ab-ab",
+      "dhcp enabled": "No",
+      "autoconfiguration enabled": "Yes"
+    },
+    {
+      "adapter_name": "Wireless LAN adapter Wi-Fi",
+      "media state": "Media disconnected",
+      "connection-specific dns suffix": "",
+      "description": "Intel(R) Wi-Fi 6E AX211 160MHz",
+      "physical address": "0C:0C:F2:F2:57:57",
+      "dhcp enabled": "Yes",
+      "autoconfiguration enabled": "Yes"
+    },
+    {
+      "adapter_name": "Ethernet adapter Bluetooth Network Connection",
+      "media state": "Media disconnected",
+      "connection-specific dns suffix": "",
+      "description": "Bluetooth Device (Personal Area Network)",
+      "physical address": "A1-A1-B2-B2-C3-C3",
+      "dhcp enabled": "Yes",
+      "autoconfiguration enabled": "Yes"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "file_name": "parser_input_a.txt",
+  "adapters": [
+    {
+      "adapter_name": "Ethernet adapter Ethernet 2",
+      "connection-specific dns suffix": "task.hackathlon.edu",
+      "ipv6 address": "",
+      "temporary ipv6 address": "fd58:43b2:11a9::1",
+      "link-local ipv6 address": "fe80::9c21:ef74:66af:120d%3",
+      "ipv4 address": "192.168.0.10",
+      "subnet mask": "",
+      "default gateway": ["fe80::ab52:9c21:fabe:3e44%3", "192.168.0.1", "127.0.0.1"]
+    },
+    {
+      "adapter_name": "Ethernet adapter Ethernet 3",
+      "connection-specific dns suffix": "",
+      "ipv6 address": "fd58:43b2:11a9:0000:0000:0000:0000:0001",
+      "temporary ipv6 address": "fd58:43b2:11a9::1",
+      "link-local ipv6 address": "fe80::9c21:ef74:66af:120d%3",
+      "ipv4 address": "192.168.0.10(Deferred)",
+      "subnet mask": "255.255.255.0",
+      "default gateway": ["fe80::ab52:9c21:fabe:3e44%3", "192.168.0.1"]
+    },
+    {
+      "adapter_name": "Ethernet adapter Ethernet 5",
+      "connection-specific dns suffix": "",
+      "link-local ipv6 address": "fe80::ef74:6a6d:9c21:c312%15",
+      "autoconfiguration ipv4 address": "192.168.10.1",
+      "subnet mask": "255.255.0.0",
+      "default gateway": []
+    },
+    {
+      "adapter_name": "Wireless LAN adapter Local Area Connection* 1",
+      "media state": "Media disconnected",
+      "connection-specific dns suffix": ""
+    },
+    {
+      "adapter_name": "Wireless LAN adapter Local Area Connection* 2",
+      "media state": "Media disconnected",
+      "connection-specific dns suffix": ""
+    },
+    {
+      "adapter_name": "Wireless LAN adapter Wi-Fi",
+      "media state": "Media disconnected",
+      "connection-specific dns suffix": ""
+    },
+    {
+      "adapter_name": "Ethernet adapter Bluetooth Network Connection",
+      "media state": "Media disconnected",
+      "connection-specific dns suffix": ""
+    }
+  ]
+}
