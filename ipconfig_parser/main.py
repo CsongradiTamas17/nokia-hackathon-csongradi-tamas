@@ -5,16 +5,6 @@ import re
 # csak ezeknél engedünk több értéket
 MULTI_VALUE_KEYS = { "dns servers", "default gateway", }
 
-def read_file_safely(file_path):
-    for enc in ["utf-8", "utf-16", "cp1250"]:
-        try:
-            with open(file_path, encoding=enc) as f:
-                return f.readlines()
-        except UnicodeDecodeError:
-            continue
-    raise ValueError(f"Nem olvasható fájl: {file_path}")
-
-
 def clean(key):
     return re.sub(r"\.+", "", key.lower()).strip()
 
@@ -23,13 +13,12 @@ def parse_value(key, value):
     value = value.strip()
     return value.split() if key in MULTI_VALUE_KEYS else value
 
-
 def parse_ipconfig(file_path):
     adapters = []
     current = None
     last_key = None
 
-    for line in read_file_safely(file_path):
+    for line in Path(file_path).read_text(encoding="utf-16").splitlines():
         line = line.strip()
         low = line.lower()
 
@@ -64,11 +53,10 @@ def parse_ipconfig(file_path):
 
     return adapters
 
-
 def main():
     for path in sorted(Path(".").glob("*.txt")):
         output = {
-            "file_name": path.name,
+            "file_name": "ipconfig.log", # path.name
             "adapters": parse_ipconfig(path)
         }
 
