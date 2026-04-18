@@ -50,7 +50,7 @@ def main():
 
             # Ha a kilépés kisebb mint a belépés
             if exit < entry:
-                print(f"{plate} → HIBA (kilépés korábbi)")
+                #print(f"{plate} → HIBA (kilépés korábbi)")
                 continue
 
             minutes = int((exit - entry).total_seconds() // 60)
