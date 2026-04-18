@@ -37,7 +37,7 @@ def main():
     data = Path("input.txt").read_text(encoding="utf-8").splitlines()
     
     print("RENDSZAM\tPARKOLAS IDEJE\t\tFIZETENDO")
-    print("=================================================")
+    print("=============================================================")
     for line in data:
         if not line.strip() or "RENDSZAM" in line or "=" in line:
             continue
