@@ -57,9 +57,9 @@ def main():
             mins = minutes % 60
 
             if minutes < 60:
-                print(f"{plate} ({minutes} perc parkolás) → {fee} forint")
+                print(f"{minutes} perc parkolás → {fee} forint")
             else:
-                print(f"{plate} ({hours} óra parkolás) → {fee} forint")
+                print(f"{hours} óra parkolás → {fee} forint")
 
         except Exception:
             print("HIBA a sor feldolgozásánál")
