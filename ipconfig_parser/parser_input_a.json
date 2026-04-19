@@ -1,82 +1,84 @@
-{
-  "file_name": "parser_input_a.txt",
-  "adapters": [
-    {
-      "adapter_name": "Ethernet adapter Ethernet 2",
-      "description": "",
-      "physical_address": "",
-      "dhcp_enabled": "",
-      "ipv4_address": "192.168.0.10",
-      "subnet_mask": "",
-      "default_gateway": [
-        "fe80::ab52:9c21:fabe:3e44%3",
-        "192.168.0.1",
-        "127.0.0.1"
-      ],
-      "dns_servers": []
-    },
-    {
-      "adapter_name": "Ethernet adapter Ethernet 3",
-      "description": "",
-      "physical_address": "",
-      "dhcp_enabled": "",
-      "ipv4_address": "192.168.0.10(Deferred)",
-      "subnet_mask": "255.255.255.0",
-      "default_gateway": [
-        "fe80::ab52:9c21:fabe:3e44%3",
-        "192.168.0.1"
-      ],
-      "dns_servers": []
-    },
-    {
-      "adapter_name": "Ethernet adapter Ethernet 5",
-      "description": "",
-      "physical_address": "",
-      "dhcp_enabled": "",
-      "ipv4_address": "",
-      "subnet_mask": "255.255.0.0",
-      "default_gateway": [],
-      "dns_servers": []
-    },
-    {
-      "adapter_name": "Wireless LAN adapter Local Area Connection* 1",
-      "description": "",
-      "physical_address": "",
-      "dhcp_enabled": "",
-      "ipv4_address": "",
-      "subnet_mask": "",
-      "default_gateway": [],
-      "dns_servers": []
-    },
-    {
-      "adapter_name": "Wireless LAN adapter Local Area Connection* 2",
-      "description": "",
-      "physical_address": "",
-      "dhcp_enabled": "",
-      "ipv4_address": "",
-      "subnet_mask": "",
-      "default_gateway": [],
-      "dns_servers": []
-    },
-    {
-      "adapter_name": "Wireless LAN adapter Wi-Fi",
-      "description": "",
-      "physical_address": "",
-      "dhcp_enabled": "",
-      "ipv4_address": "",
-      "subnet_mask": "",
-      "default_gateway": [],
-      "dns_servers": []
-    },
-    {
-      "adapter_name": "Ethernet adapter Bluetooth Network Connection",
-      "description": "",
-      "physical_address": "",
-      "dhcp_enabled": "",
-      "ipv4_address": "",
-      "subnet_mask": "",
-      "default_gateway": [],
-      "dns_servers": []
-    }
-  ]
-}
+[
+  {
+    "file_name": "parser_input_a.txt",
+    "adapters": [
+      {
+        "adapter_name": "Ethernet adapter Ethernet 2",
+        "description": "",
+        "physical_address": "",
+        "dhcp_enabled": "",
+        "ipv4_address": "192.168.0.10",
+        "subnet_mask": "",
+        "default_gateway": [
+          "fe80::ab52:9c21:fabe:3e44%3",
+          "192.168.0.1",
+          "127.0.0.1"
+        ],
+        "dns_servers": []
+      },
+      {
+        "adapter_name": "Ethernet adapter Ethernet 3",
+        "description": "",
+        "physical_address": "",
+        "dhcp_enabled": "",
+        "ipv4_address": "192.168.0.10(Deferred)",
+        "subnet_mask": "255.255.255.0",
+        "default_gateway": [
+          "fe80::ab52:9c21:fabe:3e44%3",
+          "192.168.0.1"
+        ],
+        "dns_servers": []
+      },
+      {
+        "adapter_name": "Ethernet adapter Ethernet 5",
+        "description": "",
+        "physical_address": "",
+        "dhcp_enabled": "",
+        "ipv4_address": "",
+        "subnet_mask": "255.255.0.0",
+        "default_gateway": [],
+        "dns_servers": []
+      },
+      {
+        "adapter_name": "Wireless LAN adapter Local Area Connection* 1",
+        "description": "",
+        "physical_address": "",
+        "dhcp_enabled": "",
+        "ipv4_address": "",
+        "subnet_mask": "",
+        "default_gateway": [],
+        "dns_servers": []
+      },
+      {
+        "adapter_name": "Wireless LAN adapter Local Area Connection* 2",
+        "description": "",
+        "physical_address": "",
+        "dhcp_enabled": "",
+        "ipv4_address": "",
+        "subnet_mask": "",
+        "default_gateway": [],
+        "dns_servers": []
+      },
+      {
+        "adapter_name": "Wireless LAN adapter Wi-Fi",
+        "description": "",
+        "physical_address": "",
+        "dhcp_enabled": "",
+        "ipv4_address": "",
+        "subnet_mask": "",
+        "default_gateway": [],
+        "dns_servers": []
+      },
+      {
+        "adapter_name": "Ethernet adapter Bluetooth Network Connection",
+        "description": "",
+        "physical_address": "",
+        "dhcp_enabled": "",
+        "ipv4_address": "",
+        "subnet_mask": "",
+        "default_gateway": [],
+        "dns_servers": []
+      }
+    ]
+  }
+]

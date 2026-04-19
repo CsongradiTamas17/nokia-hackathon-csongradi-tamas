@@ -7,16 +7,7 @@ MULTI_VALUE_KEYS = {"dns_servers", "default_gateway"}
 
 # adapter felismerés
 ADAPTER_RE = re.compile(r"^(.*adapter.*?):\s*$", re.IGNORECASE)
-'''
-GLOBAL_KEYS = {
-    "host_name": "host_name",
-    "primary_dns_suffix": "primary_dns_suffix",
-    "node_type": "node_type",
-    "ip_routing_enabled": "ip_routing_enabled",
-    "wins_proxy_enabled": "wins_proxy_enabled",
-    "dns_suffix_search_list": "dns_suffix_search_list"
-}
-'''
+
 def clean(key):
     return re.sub(r"\.+", "", key.lower()).strip()
 
@@ -100,10 +91,12 @@ def parse_ipconfig(file_path):
 
 def main():
     for path in sorted(Path(".").glob("*.txt")):
-        output = {
-            "file_name": path.name,
-            "adapters": parse_ipconfig(path)
-        }
+        output = [
+            {
+                "file_name": path.name,
+                "adapters": parse_ipconfig(path)
+            }
+        ]
 
         out_file = f"{path.stem}.json"
 
