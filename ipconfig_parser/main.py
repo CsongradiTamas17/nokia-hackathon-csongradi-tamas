@@ -102,7 +102,7 @@ def main():
         #print(out_file)
         with open(out_file, "r", encoding="utf-8") as f:
             for line in f:
-                print(line)
+                print(line.strip("\n"))
 
 if __name__ == "__main__":
     main()
