@@ -20,7 +20,7 @@
       "description": "",
       "physical_address": "",
       "dhcp_enabled": "",
-      "ipv4_address": "192.168.0.10(Deferred)",
+      "ipv4_address": "192.168.0.10",
       "subnet_mask": "255.255.255.0",
       "default_gateway": [
         "fe80::ab52:9c21:fabe:3e44%3",

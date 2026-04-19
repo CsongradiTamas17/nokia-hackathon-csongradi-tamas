@@ -60,7 +60,7 @@ def parse_ipconfig(file_path):
         if ":" in line:
             k, v = line.split(":", 1)
             key = clean(k).replace(" ", "_")
-            value = v.strip()
+            value = v.strip().split("(")[0]
 
             if key in ALLOWED_KEYS:
                 if key in MULTI_VALUE_KEYS:

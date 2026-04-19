@@ -3,7 +3,7 @@
   "adapters": [
     {
       "adapter_name": "Ethernet adapter Ethernet 2",
-      "description": "Intel(R) Ethernet Connection (16) I219-LM",
+      "description": "Intel",
       "physical_address": "E1-17-17-17-17-E1",
       "dhcp_enabled": "Yes",
       "ipv4_address": "",
@@ -16,7 +16,7 @@
       "description": "USB Ethernet",
       "physical_address": "E1-17-17-17-17-E1",
       "dhcp_enabled": "Yes",
-      "ipv4_address": "192.168.0.10(Preferred)",
+      "ipv4_address": "192.168.0.10",
       "subnet_mask": "255.255.255.0",
       "default_gateway": [
         "fe80::ab52:9c21:fabe:3e44%3",
@@ -58,7 +58,7 @@
     },
     {
       "adapter_name": "Wireless LAN adapter Wi-Fi",
-      "description": "Intel(R) Wi-Fi 6E AX211 160MHz",
+      "description": "Intel",
       "physical_address": "0C:0C:F2:F2:57:57",
       "dhcp_enabled": "Yes",
       "ipv4_address": "",
@@ -68,7 +68,7 @@
     },
     {
       "adapter_name": "Ethernet adapter Bluetooth Network Connection",
-      "description": "Bluetooth Device (Personal Area Network)",
+      "description": "Bluetooth Device ",
       "physical_address": "A1-A1-B2-B2-C3-C3",
       "dhcp_enabled": "Yes",
       "ipv4_address": "",
