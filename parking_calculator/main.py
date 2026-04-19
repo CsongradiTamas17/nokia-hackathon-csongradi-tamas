@@ -36,31 +36,36 @@ def calculate_fee(minutes):
 def main():
     data = Path("input.txt").read_text(encoding="utf-8").splitlines()
     
-    print("RENDSZAM\tDIJ")
-    for line in data:
-        if not line.strip() or "RENDSZAM" in line or "=" in line:
-            continue
+    with open("output.txt", "w", encoding="utf-8") as f:
+        f.write("RENDSZAM\tDIJ\n")
 
-        try:
-            parts = re.split(r"\s{2,}|\t+", line.strip())
+        print("RENDSZAM\tDIJ")
 
-            plate = parts[0]
-            entry = parse_time(parts[1])
-            exit = parse_time(parts[2])
-
-            # Ha a kilépés kisebb mint a belépés
-            if exit < entry:
+        for line in data:
+            if not line.strip() or "RENDSZAM" in line or "=" in line:
                 continue
 
-            minutes = int((exit - entry).total_seconds() // 60)
-            fee = calculate_fee(minutes)
-            hours = minutes // 60
-            mins = minutes % 60
+            try:
+                parts = re.split(r"\s{2,}|\t+", line.strip())
 
-            print(f"{plate}\t\t{fee}")
+                plate = parts[0]
+                entry = parse_time(parts[1])
+                exit = parse_time(parts[2])
 
-        except Exception:
-            print("HIBA a sor feldolgozásánál")
+                if exit < entry:
+                    continue
+
+                minutes = int((exit - entry).total_seconds() // 60)
+                fee = calculate_fee(minutes)
+
+                # Írás fájlba
+                f.write(f"{plate}\t\t{fee}\n")
+
+                # Konzolra is
+                print(f"{plate}\t\t{fee}")
+
+            except ValueError as e:
+                print(f"HIBA: {e}")
 
 if __name__ == "__main__":
     main()

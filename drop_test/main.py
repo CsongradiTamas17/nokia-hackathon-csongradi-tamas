@@ -4,23 +4,20 @@ from pathlib import Path
 def min_num_of_drops(N, H):
     if H == 0:
         return 0
-    
+
     # Próbák száma
     m = 0
+    total = 0
 
-    while True:
+    while total < H:
         m += 1
+        total = 0
 
         # Kiszámoljuk, hány szintet tudunk tesztelni m próbával
-        total = 0
-        for i in range(1, N + 1):
+        for i in range(1, min(N, m) + 1):
             total += comb(m, i)
-            
-            if total >= H:
-                break
 
-        if total >= H:
-            return m
+    return m
 
 def main():
     data = Path("input.txt").read_text(encoding="utf-8").strip().splitlines()

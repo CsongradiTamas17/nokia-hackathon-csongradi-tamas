@@ -91,12 +91,11 @@ def parse_ipconfig(file_path):
 
 def main():
     for path in sorted(Path(".").glob("*.txt")):
-        output = [
-            {
-                "file_name": path.name,
-                "adapters": parse_ipconfig(path)
-            }
-        ]
+        output = {
+            "file_name": path.name,
+            "adapters": parse_ipconfig(path)
+        }
+        
 
         out_file = f"{path.stem}.json"
 

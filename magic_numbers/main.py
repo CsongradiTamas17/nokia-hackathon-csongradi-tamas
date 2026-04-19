@@ -15,10 +15,6 @@ def next_magic_num(n: str) -> str:
     right = length // 2
 
     while left >= 0 and carry: # Középről kifelé növelés
-        for i in (left, right):
-            if i < 0 or i >= length:
-                continue
-
         new = int(num[left]) + carry
 
         if new == 10:
