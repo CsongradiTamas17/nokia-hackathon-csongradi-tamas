@@ -36,7 +36,7 @@ def calculate_fee(minutes):
 def main():
     data = Path("input.txt").read_text(encoding="utf-8").splitlines()
     
-    print("RENDSZAM\t\tDIJ")
+    print("RENDSZAM\tDIJ")
     for line in data:
         if not line.strip() or "RENDSZAM" in line or "=" in line:
             continue
