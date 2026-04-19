@@ -99,7 +99,10 @@ def main():
             encoding="utf-8"
         )
 
-        print(out_file)
+        #print(out_file)
+        with open(out_file, "r", encoding="utf-8") as f:
+            for line in f:
+                print(line)
 
 if __name__ == "__main__":
     main()
