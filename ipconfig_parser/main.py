@@ -20,10 +20,33 @@ GLOBAL_KEYS = {
 def clean(key):
     return re.sub(r"\.+", "", key.lower()).strip()
 
+def empty_adapter(name):
+    return {
+        "adapter_name": name,
+        "description": "",
+        "physical_address": "",
+        "dhcp_enabled": "",
+        "autoconfiguration_enabled": "",
+        "ipv4_address": "",
+        "ipv6_address": "",
+        "ipv6_temporary": "",
+        "ipv6_link_local": "",
+        "subnet_mask": "",
+        "default_gateway": [],
+        "dhcp_server": "",
+        "lease_obtained": "",
+        "lease_expires": "",
+        "dns_servers": [],
+        "dns_suffix": "",
+        "dhcpv6_iaid": "",
+        "dhcpv6_duid": "",
+        "media_state": "",
+        "netbios_over_tcpip": ""
+    }
+
 def parse_ipconfig(file_path):
     adapters = []
 
-    # HOST LISTA
     host = [{
         "host_name": "",
         "primary_dns_suffix": "",
@@ -47,9 +70,9 @@ def parse_ipconfig(file_path):
             if current:
                 adapters.append(current)
 
-            current = {
-                "adapter_name": match.group(1).strip()
-            }
+            # Itt használjuk az empty_adapter-t
+            current = empty_adapter(match.group(1).strip())
+
             last_key = None
             continue
 
@@ -58,7 +81,6 @@ def parse_ipconfig(file_path):
             key = clean(k).replace(" ", "_")
             value = v.strip()
 
-            # HOST mezők
             if key in GLOBAL_KEYS:
                 host[0][GLOBAL_KEYS[key]] = value if value else ""
 
@@ -79,7 +101,7 @@ def parse_ipconfig(file_path):
                 continue
 
             if last_key in MULTI_VALUE_KEYS:
-                current[last_key] = current[last_key] + extra.split()
+                current[last_key] += extra.split()
             else:
                 if current[last_key] == "":
                     current[last_key] = extra
@@ -88,15 +110,6 @@ def parse_ipconfig(file_path):
 
     if current:
         adapters.append(current)
-
-    # lista biztosítás
-    for adapter in adapters:
-        for key in MULTI_VALUE_KEYS:
-            if key in adapter:
-                if isinstance(adapter[key], str):
-                    adapter[key] = [adapter[key]] if adapter[key] else []
-                elif adapter[key] is None:
-                    adapter[key] = []
 
     return host, adapters
 
@@ -118,7 +131,7 @@ def main():
             encoding="utf-8"
         )
 
-        print(f"\n=== {out_file} ===")
+        #print(out_file)
         with open(out_file, "r", encoding="utf-8") as f:
             for line in f:
                 print(line.rstrip("\n"))
