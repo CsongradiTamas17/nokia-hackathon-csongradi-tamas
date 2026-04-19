@@ -1,5 +1,15 @@
 {
   "file_name": "parser_input_a.txt",
+  "host": [
+    {
+      "host_name": "",
+      "primary_dns_suffix": "",
+      "node_type": "",
+      "ip_routing_enabled": "",
+      "wins_proxy_enabled": "",
+      "dns_suffix_search_list": ""
+    }
+  ],
   "adapters": [
     {
       "adapter_name": "Ethernet adapter Ethernet 2",

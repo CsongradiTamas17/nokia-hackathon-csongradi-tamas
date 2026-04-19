@@ -1,5 +1,15 @@
 {
   "file_name": "parser_input_b.txt",
+  "host": [
+    {
+      "host_name": "Nebuchadnezzar",
+      "primary_dns_suffix": "",
+      "node_type": "Hybrid",
+      "ip_routing_enabled": "No",
+      "wins_proxy_enabled": "No",
+      "dns_suffix_search_list": "babylon.net"
+    }
+  ],
   "adapters": [
     {
       "adapter_name": "Ethernet adapter Ethernet 2",
