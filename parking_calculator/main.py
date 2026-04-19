@@ -36,8 +36,8 @@ def calculate_fee(minutes):
 def main():
     data = Path("input.txt").read_text(encoding="utf-8").splitlines()
     
-    print("RENDSZAM\tPARKOLAS IDEJE\t\tFIZETENDO")
-    print("=============================================================")
+    print("RENDSZAM\tPARKOLAS DIJ")
+    print("==================================")
     for line in data:
         if not line.strip() or "RENDSZAM" in line or "=" in line:
             continue
@@ -59,9 +59,9 @@ def main():
             mins = minutes % 60
 
             if minutes < 60:
-                print(f"{plate}\t\t{minutes} perc parkolás\t\t{fee} forint")
+                print(f"{plate}\t\t{fee} forint")
             else:
-                print(f"{plate}\t\t{hours} óra parkolás\t\t{fee} forint")
+                print(f"{plate}\t\t{fee} forint")
 
         except Exception:
             print("HIBA a sor feldolgozásánál")
